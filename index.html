@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html>
+
     <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <title>Tic Tac Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
-</html>
+
+<body>
+
+  <h1>Welcome to Tic-Tac-Toe!</h1>
+
+<p id="response"></p>
+
+        <section>
+          <form id="signUp">
+            <fieldset>
+              <legend>New Users</legend>
+              <label for="sign-up-email">Email:</label>
+              <input id="sign-up-email" type="email" name="email" placeholder="Enter your email here"><br>
+              <label for="sign-up-password">Password:</label>
+              <input id="sign-up-password" type="password" name="password" placeholder="Password"><br>
+              <label for="sign-up-password_confirmation">Password Confirmation:</label>
+              <input id="sign-up-password_confirmation" type="password" name="password_confirmation" placeholder="Confirm Password"><br>
+              <input type="submit" value="Sign up!">
+            </fieldset>
+          </form>
+        </section>
+
+<br>
+
+        <section>
+                <form id="signIn">
+                  <fieldset>
+                    <legend>Returning Users</legend>
+                    <label for="sign-in-email">Email:</label>
+                    <input id="sign-in-email" type="email" name="email" placeholder="Email"><br>
+
+                    <label for="sign-in-password">Password:</label>
+                    <input id="sign-in-password" type="password" name="password" placeholder="Password"><br>
+
+                    <input type="submit" value="Sign In!">
+                  </fieldset>
+                </form>
+              </section>
+
+              <section>
+                      <form id="changePassword">
+                        <fieldset>
+                          <legend>Don't like your password anymore? Change it here.</legend>
+                          <input type="password" name="passwordsold" placeholder="Old Password">
+                          <input type="password" name="passwordsnew" placeholder="New Password">
+                          <input type="submit" value="Change Password!">
+                        </fieldset>
+                      </form>
+                    </section>
+
+                    <section>
+                      <legend>Done for the day? Don't forget to log out.</legend>
+                    					<form id='sign-out'>
+                    						<input type='submit' value='Sign out'>
+              </form>
+                      </section>
+
+                </body>
+            </html>
