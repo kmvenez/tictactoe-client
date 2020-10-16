@@ -8,7 +8,6 @@ const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  // send data in AJAX request to the API
   api.signUp(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
@@ -17,44 +16,52 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   const form = event.target
-  // use getFormFields to get data from the form
   const data = getFormFields(form)
-  // send data in AJAX request to the API
   api.signIn(data)
-    // handle successul response
     .then(ui.onSignInSuccess)
-    // handle failed response
     .catch(ui.onSignInFailure)
 }
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  // get the form from the event
   const form = event.target
-  // use getFormFields to get data from the form
   const data = getFormFields(form)
-  // send data in AJAX request to the API
   api.changePassword(data)
-    // handle successul response
     .then(ui.onChangePasswordSuccess)
-    // handle failed response
     .catch(ui.onChangePasswordFailure)
 }
 
 const onSignOut = function (event) {
   event.preventDefault()
-  // get the form from the event
-  // use getFormFields to get data from the form
   api.signOut()
-    // handle successul response
     .then(ui.onSignOutSuccess)
-    // handle failed response
     .catch(ui.onSignOutFailure)
+}
+
+const onIndexGame = function (event) {
+  api.indexGame()
+    .then(ui.onNewGameSuccess)
+    .catch(ui.onNewGameFailure)
+}
+
+const onCreateGame = function (event) {
+  api.createGame()
+    .then(ui.onNewGameSuccess)
+    .catch(ui.onNewGameFailure)
+}
+
+const onNewGameReturningUser = function (event) {
+  api.newGameReturningUser()
+    .then(ui.onNewGameSuccess)
+    .catch(ui.onNewGameFailure)
 }
 
 module.exports = {
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
-  onSignOut: onSignOut
+  onSignOut: onSignOut,
+  onIndexGame: onIndexGame,
+  onCreateGame: onCreateGame,
+  onNewGameReturningUser: onNewGameReturningUser
 }

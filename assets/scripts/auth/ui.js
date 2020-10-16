@@ -42,6 +42,14 @@ const onSignOutSuccess = function (response) {
   $('#signOut').show()
 }
 
+const onNewGameFailure = function (error) {
+  $('#response').text(error, 'Uhoh! Try again.')
+}
+
+const onNewGameSuccess = function () {
+  $('#response').text('Time to party.')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -50,5 +58,7 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutFailure,
-  onSignOutSuccess
+  onSignOutSuccess,
+  onNewGameSuccess,
+  onNewGameFailure
 }

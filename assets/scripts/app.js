@@ -13,4 +13,7 @@ $(() => {
   $('#signUp').on('submit', onAction.onSignUp)
   $('#signIn').on('submit', onAction.onSignIn)
   $('#signOut').on('submit', onAction.onSignOut)
+  $('#new-game').on('submit', onAction.indexGame)
+  $('#new-game').on('submit', onAction.createGame)
+  $('#new-game').on('submit', onAction.newGameReturningUser)
 })
