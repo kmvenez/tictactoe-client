@@ -5,6 +5,8 @@ const store = require('../store')
 const onSignUpSuccess = function (response) {
   $('#response').text('Welcome, ' + response.user.email)
   $('#signUp').trigger('reset')
+  $('signUp').show()
+  $('signUp').hide()
 }
 
 const onSignUpFailure = function (error) {
@@ -18,6 +20,7 @@ const onSignInSuccess = function (response) {
   $('#changePassword').show()
   $('#signUp').hide()
   $('#signIn').hide()
+  $('#new-game').show()
 }
 
 const onSignInFailure = function (error) {
@@ -42,14 +45,6 @@ const onSignOutSuccess = function (response) {
   $('#signOut').show()
 }
 
-const onNewGameFailure = function (error) {
-  $('#response').text(error, 'Uhoh! Try again.')
-}
-
-const onNewGameSuccess = function () {
-  $('#response').text('Time to party.')
-}
-
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -58,7 +53,5 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutFailure,
-  onSignOutSuccess,
-  onNewGameSuccess,
-  onNewGameFailure
+  onSignOutSuccess
 }

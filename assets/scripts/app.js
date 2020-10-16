@@ -1,19 +1,26 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
-
 const onAction = require('./auth/events')
+const onGameAction = require('./thegame/events')
+
 $(() => {
   $('#changePassword').hide()
-  $('#changePassword').on('submit', onAction.onChangePassword)
+  $('#sign-out').hide()
   $('#signUp').on('submit', onAction.onSignUp)
   $('#signIn').on('submit', onAction.onSignIn)
-  $('#signOut').on('submit', onAction.onSignOut)
-  $('#new-game').on('submit', onAction.indexGame)
-  $('#new-game').on('submit', onAction.createGame)
-  $('#new-game').on('submit', onAction.newGameReturningUser)
+  $('#new-game').on('submit', onGameAction.indexGame)
+  $('#changePassword').on('submit', onAction.onChangePassword)
+  $('#sign-out').on('submit', onAction.onSignOut)
+})
+
+$(() => {
+  let currentPlayer = '✕'
+  const onBoxClick = (event) => {
+    console.log('A click has occured')
+    const box = $(event.target)
+    box.text(currentPlayer)
+    box.css('background', 'transparent').text(currentPlayer)
+    currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
+  }
+  $('.box').on('click', onBoxClick)
 })

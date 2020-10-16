@@ -38,30 +38,9 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
-const onIndexGame = function (event) {
-  api.indexGame()
-    .then(ui.onNewGameSuccess)
-    .catch(ui.onNewGameFailure)
-}
-
-const onCreateGame = function (event) {
-  api.createGame()
-    .then(ui.onNewGameSuccess)
-    .catch(ui.onNewGameFailure)
-}
-
-const onNewGameReturningUser = function (event) {
-  api.newGameReturningUser()
-    .then(ui.onNewGameSuccess)
-    .catch(ui.onNewGameFailure)
-}
-
 module.exports = {
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
-  onSignOut: onSignOut,
-  onIndexGame: onIndexGame,
-  onCreateGame: onCreateGame,
-  onNewGameReturningUser: onNewGameReturningUser
+  onSignOut: onSignOut
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
     <title>Tic Tac Toe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,12 +9,15 @@
     </head>
 
 <body>
-
-  <h1>Welcome to Tic-Tac-Toe!</h1>
+  <p>It was known in Ancient Rome as "Terni Lapilli."  Medieval pagan rituals often thought the nine square grid
+    held magical powers.  Secret societies in the Middle Ages called it "Cabala of the Nine Chambers,"
+    believing the grid could hold secret messages.
+  <h1>Welcome... to Tic-Tac-Toe!</h1>
 
 <p id="response"></p>
-
-        <section>
+<div class="container">
+  <div class="row">
+    <div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
 
           <form id="signUp">
             <fieldset>
@@ -29,50 +31,69 @@
               <input type="submit" value="Sign up!">
             </fieldset>
           </form>
-        </section>
+        </div>
+
+          <div class="row">
+            <div class =".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
+                        <form id="signIn">
+                          <fieldset>
+                            <legend>Returning Users</legend>
+                            <label for="sign-in-email">Email:</label>
+                            <input id="sign-in-email" type="email" name="email" placeholder="Email"><br>
+
+                            <label for="sign-in-password">Password:</label>
+                            <input id="sign-in-password" type="password" name="password" placeholder="Password"><br>
+
+                            <input type="submit" value="Sign In!">
+                          </fieldset>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
-<br>
+          <form id='new-game'>
+                <legend>Ready to rock? Click here to start a new game.</legend>
+                <input type='submit' value='New Game'>
+          </form>
 
-        <section>
-                <form id="signIn">
-                  <fieldset>
-                    <legend>Returning Users</legend>
-                    <label for="sign-in-email">Email:</label>
-                    <input id="sign-in-email" type="email" name="email" placeholder="Email"><br>
+          <section class="container">
+          <form id="game">
+          <div class="row board h-100">
+              <div class="col-4 box"></div>
+              <div class="col-4 box"></div>
+              <div class="col-4 box"></div>
 
-                    <label for="sign-in-password">Password:</label>
-                    <input id="sign-in-password" type="password" name="password" placeholder="Password"><br>
+              <div class="col-4 box"></div>
+              <div class="col-4 box"></div>
+              <div class="col-4 box"></div>
 
-                    <input type="submit" value="Sign In!">
+              <div class="col-4 box"></div>
+              <div class="col-4 box"></div>
+              <div class="col-4 box"></div>
+          </form>
+          </div>
+          </section>
+
+
+          <form id="changePassword">
+          <fieldset>
+          <legend>Don't like your password anymore? Change it here.</legend>
+                  <input type="password" name="passwordsold" placeholder="Old Password">
+                  <input type="password" name="passwordsnew" placeholder="New Password">
+                  <input type="submit" value="Change Password!">
                   </fieldset>
-                </form>
-              </section>
-
-              <section>
-                      <form id="changePassword">
-                        <fieldset>
-                          <legend>Don't like your password anymore? Change it here.</legend>
-                          <input type="password" name="passwordsold" placeholder="Old Password">
-                          <input type="password" name="passwordsnew" placeholder="New Password">
-                          <input type="submit" value="Change Password!">
-                        </fieldset>
                       </form>
-                    </section>
 
-                    <section>
-                      <legend>Done for the day? Don't forget to log out.</legend>
-                    					<form id='sign-out'>
-                    						<input type='submit' value='Sign out'>
-              </form>
-                      </section>
+        	<form id='sign-out'>
+                <legend>Done for the day? Don't forget to log out.</legend>
+        				<input type='submit' value='Sign out'>
+          </form>
 
-                      <section>
-                        <legend>Ready to rock? Click here to start a new game.</legend>
-                                <form id='new-game'>
-                                  <input type='submit' value='New Game'>
-                </form>
-                        </section>
 
-                </body>
+
+        </body>
+
+
             </html>

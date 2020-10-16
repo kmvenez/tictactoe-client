@@ -56,65 +56,9 @@ const signOut = function (data) {
   })
 }
 
-const indexGame = function (data) {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user
-    },
-    url: config.apiUrl + '/games',
-    method: 'GET'
-  })
-}
-
-const newGameReturningUser = function (data) {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/:id',
-    method: 'GET'
-  })
-}
-
-const createGame = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    data: {
-      credentials: {
-        email: data.email,
-        password: data.password
-      }
-    }
-  })
-}
-
-const updateGame = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/games/:id',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: '[]',
-          value: '[]'
-        },
-        over: false
-      }
-    }
-  })
-}
-
 module.exports = {
   signUp: signUp,
   signIn: signIn,
   changePassword: changePassword,
-  signOut: signOut,
-  indexGame: indexGame,
-  newGameReturningUser: newGameReturningUser,
-  createGame: createGame,
-  updateGame: updateGame
+  signOut: signOut
 }
