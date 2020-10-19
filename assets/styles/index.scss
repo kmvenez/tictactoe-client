@@ -20,6 +20,11 @@ font-size: 50px;
 color: yellow;
 }
 
+img {
+  align-content: center;
+  display: flex;
+}
+
 #changePassword , #sign-out , #new-game{
   display: flex;
   border: 1px dashed blue;

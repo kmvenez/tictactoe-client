@@ -3,6 +3,7 @@
 const config = require('./../config')
 const store = require('../store')
 
+// This is my API call for the sign up button.
 const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -17,6 +18,7 @@ const signUp = function (data) {
   })
 }
 
+// This is my API call for my sign in button.
 const signIn = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
@@ -30,6 +32,7 @@ const signIn = function (data) {
   })
 }
 
+// This is my API call for my change password button.
 const changePassword = function (data) {
   return $.ajax({
     url: config.apiUrl + '/change-password',
@@ -46,6 +49,7 @@ const changePassword = function (data) {
   })
 }
 
+// This is my API call for my sign out button.
 const signOut = function (data) {
   return $.ajax({
     headers: {

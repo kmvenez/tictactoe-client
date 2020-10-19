@@ -4,6 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
+// This is the function to run when sign up is clicked.
 const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
@@ -13,6 +14,7 @@ const onSignUp = function (event) {
     .catch(ui.onSignUpFailure)
 }
 
+// This is the function to run when sign in is clicked.
 const onSignIn = function (event) {
   event.preventDefault()
   const form = event.target
@@ -22,6 +24,7 @@ const onSignIn = function (event) {
     .catch(ui.onSignInFailure)
 }
 
+// This is the function to run when change password is clicked.
 const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
@@ -31,6 +34,7 @@ const onChangePassword = function (event) {
     .catch(ui.onChangePasswordFailure)
 }
 
+// This is the function to run when sign out is clicked.
 const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
