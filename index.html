@@ -24,10 +24,13 @@
               <legend>New Users</legend>
               <label for="sign-up-email">Email:</label>
               <input id="sign-up-email" type="email" name="email" placeholder="Enter your email here"><br>
+
               <label for="sign-up-password">Password:</label>
               <input id="sign-up-password" type="password" name="password" placeholder="Password"><br>
+
               <label for="sign-up-password_confirmation">Password Confirmation:</label>
               <input id="sign-up-password_confirmation" type="password" name="password_confirmation" placeholder="Confirm Password"><br>
+
               <input type="submit" value="Sign up!">
             </fieldset>
           </form>
@@ -52,14 +55,13 @@
                 </div>
               </div>
 
-
           <form id='new-game'>
                 <legend>Ready to rock? Click here to start a new game.</legend>
                 <input type='submit' value='New Game'>
           </form>
 
+  <form id="game">
           <section class="container">
-          <form id="game">
           <div class="row board h-100">
               <div class="col-4 box"></div>
               <div class="col-4 box"></div>
@@ -72,9 +74,9 @@
               <div class="col-4 box"></div>
               <div class="col-4 box"></div>
               <div class="col-4 box"></div>
-          </form>
-          </div>
+        </div>
           </section>
+                  </form>
 
 
           <form id="changePassword">
@@ -90,6 +92,9 @@
                 <legend>Done for the day? Don't forget to log out.</legend>
         				<input type='submit' value='Sign out'>
           </form>
+
+
+          <button id='start-over'>Start Over</button>
 
 
 

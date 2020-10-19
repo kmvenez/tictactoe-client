@@ -9,6 +9,14 @@ const indexGame = function (event) {
     .catch(ui.onNewGameFailure)
 }
 
+const newGame = function (event) {
+  event.preventDefault()
+  api.startGame()
+    .then(ui.onNewGameSuccess)
+    .catch(ui.onNewGameFailure)
+}
+
 module.exports = {
-  indexGame: indexGame
+  indexGame: indexGame,
+  newGame: newGame
 }

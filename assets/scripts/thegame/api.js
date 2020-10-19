@@ -11,6 +11,17 @@ const indexGame = function (data) {
   })
 }
 
+const startGame = function () {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/games',
+    method: 'POST'
+  })
+}
+
 module.exports = {
-  indexGame: indexGame
+  indexGame: indexGame,
+  startGame: startGame
 }
