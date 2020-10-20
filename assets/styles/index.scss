@@ -10,7 +10,8 @@ body {
 
 p {
   text-align: center;
-  padding: 25px 25px 25px 25px;
+  padding: 75px 25px 25px 25px;
+  font-size: 25px;
 }
 
 h1 {
@@ -18,11 +19,15 @@ font-family: 'VT323', monospace;
 text-align: center;
 font-size: 50px;
 color: yellow;
+text-shadow: 2px 2px rgba(0, 0, 0, .25);
 }
 
 img {
-  align-content: center;
+  margin: auto;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -4rem !important;
 }
 
 #changePassword , #sign-out , #new-game{
@@ -40,6 +45,14 @@ img {
   text-shadow: 2px 2px rgba(0, 0, 0, .25);
   margin: 50px;
   text-align: center;
+  margin-top: -5rem !important;
+}
+
+#start-over {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  justify-content: float-right;
 }
 
 .container {
@@ -75,4 +88,45 @@ img {
 
 .box:nth-last-child(-n+3) {
   border-bottom: 0;
+}
+
+.btn-group {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px dashed blue;
+  padding: 10px 10px 10px 10px;
+  margin: 50px;
+  margin-top: -15rem !important;
+  margin-bottom: -15rem !important;
+}
+
+.btn {
+  background-color: yellow;
+  color: #8B0000;
+}
+
+#new-game , #changePassword {
+  margin-top: -25rem !important;
+  margin-bottom: -15rem !important;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#game {
+  margin-top: -50rem !important;
+  margin-bottom: -10rem !important;
+  font-size: 50px;
+}
+
+#start-over , #count-games {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

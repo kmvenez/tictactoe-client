@@ -22,26 +22,26 @@ $(() => {
   $('#signIn').on('submit', onAction.onSignIn)
   // On submitting 'new game', trigger function
   $('#new-game').on('submit', onGameAction.indexGame)
-
   // On submitting 'change password', trigger function
   $('#changePassword').on('submit', onAction.onChangePassword)
   // On submitting 'sign out', trigger function
   $('#sign-out').on('submit', onAction.onSignOut)
   // On submitting 'start over', trigger function
   $('#start-over').on('click', onGameAction.newGame)
-
+  // On submitting 'count games', trigger function
   $('#count-games').on('click', onGameAction.countGames)
-})
 
-// This is the functionality/interactivity for the game itself.
-$(() => {
-  let currentPlayer = '✕'
-  const onBoxClick = (event) => {
-    console.log('A click has occured')
-    const box = $(event.target)
-    box.text(currentPlayer)
-    box.css('background', 'transparent').text(currentPlayer)
-    currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
-  }
-  $('.box').on('click', onBoxClick)
+  $('#game').on('click', onGameAction.onBoxClick)
+
+  // Here's the listener/functions for the click of each box.
+  $('#0').on('click', onGameAction.boxZero)
+  $('#1').on('click', onGameAction.boxOne)
+  $('#2').on('click', onGameAction.boxTwo)
+  $('#3').on('click', onGameAction.boxThree)
+  $('#4').on('click', onGameAction.boxFour)
+  $('#5').on('click', onGameAction.boxFive)
+  $('#6').on('click', onGameAction.boxSix)
+  $('#7').on('click', onGameAction.boxSeven)
+  $('#8').on('click', onGameAction.boxEight)
+  $('.reset-btn').on('click', onGameAction.resetButton)
 })

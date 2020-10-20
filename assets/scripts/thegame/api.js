@@ -24,9 +24,9 @@ const startGame = function () {
 }
 
 // This is the API call to update the game.
-const updateGame = function (data) {
+const updateGame = function (boxIndex, currentPlayer) {
   return $.ajax({
-    url: config.apiUrl + '/games/:id',
+    url: config.apiUrl + '/games/' + store.game._id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -34,8 +34,8 @@ const updateGame = function (data) {
     data: {
       game: {
         cell: {
-          index: 0,
-          value: 'x'
+          index: boxIndex,
+          value: currentPlayer
         },
         over: false
       }
@@ -44,7 +44,7 @@ const updateGame = function (data) {
 }
 
 // This is the API call to count the amount of games played.
-const countGames = function (data) {
+const countGames = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     headers: {

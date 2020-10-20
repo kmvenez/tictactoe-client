@@ -12,9 +12,10 @@
   <p>It was known in Ancient Rome as "Terni Lapilli."  Medieval pagan rituals often thought the nine square grid
     held magical powers.  Secret societies in the Middle Ages called it "Cabala of the Nine Chambers,"
     believing the grid could hold secret messages.
-  <h1>Welcome... to Tic-Tac-Toe!</h1>
+  <h1>Welcome... to Tic-Tac-Toe!</h1><br><br><br><br>
 
-  <img src="https://cdn2.iconfinder.com/data/icons/3Dcartoon/MAME.png" alt="controller icon">
+<img src="https://i.imgur.com/LjQJLfL.png" alt="game controller icon"><br>
+
 
 <p id="response"></p>
 <div class="container">
@@ -57,50 +58,66 @@
                 </div>
               </div>
 
+
+  <form id="changePassword">
+              <fieldset>
+              <legend>Don't like your password anymore? Change it here.</legend>
+                      <input type="password" name="passwordsold" placeholder="Old Password">
+                      <input type="password" name="passwordsnew" placeholder="New Password">
+                      <input type="submit" value="Change Password!">
+                      </fieldset>
+                          </form>
+
           <form id='new-game'>
-                <legend>Ready to rock? Click here to start a new game.</legend>
+                <legend>Ready to rock? Click here to start a new game.</legend><br>
                 <input type='submit' value='New Game'>
           </form>
 
   <form id="game">
-          <section class="container">
-            <div data-cell-index='0'>
-            </div>
-          <div class="row board h-100">
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
+    <div id="board" class="container rounded board shadow-lg">
+          <h1 id="game-message" class="game-message text-center"></h1>
+          <!-- Scoreboard -->
+          <h3>X Score: <span id="x-win">0</span></h3>
+          <h3>O Score: <span id="o-win">0</span></h3>
+          <h3>Tie: <span id="ties">0</span></h3>
+          <h3>Turn: <span id="turn">X</span></h3>
+          <div class="row">
+            <div data-box-index='0' id="0" class="col shadow-lg text-center">*</div>
+            <div data-box-index='1' id="1" class="col shadow-lg text-center">*</div>
+            <div data-box-index='2' id="2" class="col shadow-lg text-center">*</div>
+          </div>
+          <div class="row">
+            <div data-box-index='3' id="3" class="col shadow-lg text-center">*</div>
+            <div data-box-index='4' id="4" class="col shadow-lg text-center">*</div>
+            <div data-box-index='5' id="5" class="col shadow-lg text-center">*</div>
+          </div>
+          <div class="row">
+            <div data-box-index='6' id="6" class="col shadow-lg text-center">*</div>
+            <div data-box-index='7' id="7" class="col shadow-lg text-center">*</div>
+            <div data-box-index='8' id="8" class="col shadow-lg text-center">*</div>
+          </div>
         </div>
-          </section>
                   </form>
 
-          <form id="changePassword">
-          <fieldset>
-          <legend>Don't like your password anymore? Change it here.</legend>
-                  <input type="password" name="passwordsold" placeholder="Old Password">
-                  <input type="password" name="passwordsnew" placeholder="New Password">
-                  <input type="submit" value="Change Password!">
-                  </fieldset>
-                      </form>
+
+                  <form id='start-over'>
+                  <input class="btn reset-btn float-right" type='click' value='Start Over'>
+                  </form>
 
         	<form id='sign-out'>
                 <legend>Done for the day? Don't forget to log out.</legend>
-        				<input type='submit' value='Sign out'>
+        				<button type='submit' value='Sign out'></button>
           </form>
 
-
-          <button id='start-over'>Start Over</button>
           <button id='count-games'>Count Games</button>
 
+<!-- Utilized this link: https://stackoverflow.com/questions/36003670/how-to-put-a-link-on-a-button-with-bootstrap -->
+<div class="btn-group" role="group">
+  <a href="http://www.realclear.com/living/2016/03/28/the_history_of_tictactoe_is_pretty_fascinating_stuff_13106.html" class="btn btn-info" role="button">The History of Tic-Tac-Toe</a>
+  <a href="https://github.com/kmvenez/tictactoe-client" class="btn btn-info" role="button">GitHub Repo</a>
+  <a href="https://www.youtube.com/watch?v=USEjXNCTvcc&ab_channel=TripleSGames" class="btn btn-info" role="button">Tutorial & Rules</a>
 
+</div>
 
         </body>
             </html>

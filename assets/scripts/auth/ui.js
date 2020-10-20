@@ -23,12 +23,13 @@ const onSignInSuccess = function (response) {
   $('#changePassword').show()
   $('#signUp').hide()
   $('#signIn').hide()
+  $('.btn-group').hide()
   $('#new-game').show()
 }
 
 // This runs if sign up failed.
-const onSignInFailure = function (error) {
-  $('#signUp').text(error, 'Uhoh! Try again.')
+const onSignInFailure = function () {
+  $('#signUp').text('Uhoh! Try again.')
 }
 
 // This runs if change password was successful.
@@ -59,6 +60,11 @@ const onSignOutSuccess = function (response) {
   $('#signIn').show()
   store.user = null
 }
+const onBoxClickSuccess = (response) => {   store.game = response.game   console.log(store.game) 
+  $('#message').text('Player ' + store.currentPlayer + ' Turn') }
+
+const onBoxClickFailure = (response) => { 
+  $('#message').text('Something went wrong, try again') } 
 
 module.exports = {
   onSignUpSuccess,
@@ -68,5 +74,6 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutFailure,
-  onSignOutSuccess
+  onSignOutSuccess,
+  onBoxClickSuccess
 }
