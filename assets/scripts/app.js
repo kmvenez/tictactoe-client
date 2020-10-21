@@ -16,6 +16,9 @@ $(() => {
   $('#start-over').hide()
   // On initial load, hide count games
   $('#count-games').hide()
+
+  $('#scorecard').hide()
+
   // On submitting 'sign up', trigger function
   $('#signUp').on('submit', onAction.onSignUp)
   // On submitting 'sign in', trigger function

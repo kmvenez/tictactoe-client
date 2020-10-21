@@ -9,14 +9,15 @@ const onNewGameFailure = function (error) {
 const onNewGameSuccess = function (response) {
   store.games = response.games
   console.log(store)
-  $('#response').text('Time to party.')
+  $('#response').text('Time to party.  Will you be...tic-tac-toast?')
   $('#new-game').hide()
   $('#changePassword').hide()
-  $('#game').show().css('background', 'black')
+  $('#game').show().css('background', '#c04df9')
   $('.box').text('')
   $('#start-over').show()
   $('#sign-out').show()
   $('#count-games').show()
+  $('#scorecard').show()
 }
 
 // This runs if counting the games played failed.

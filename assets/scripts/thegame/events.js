@@ -1,4 +1,3 @@
-
 const api = require('./api')
 const ui = require('./ui')
 
@@ -39,13 +38,12 @@ $(() => {
     const box = $(event.target) 
     const boxIndex = box.data('box-index') 
     console.log('box index ', boxIndex) 
-    console.log('players turn ', currentPlayer)  
+    console.log('players turn ', currentPlayer) 
     box.text(currentPlayer)  box.css('background', 'transparent').text(currentPlayer) 
     api.updateGame(boxIndex, currentPlayer) 
       .then(ui.onBoxClickSuccess) 
       .catch(ui.onBoxClickFailure  )
-    currentPlayer = currentPlayer === 'O' ? 'X' : 'O' } 
-
+    currentPlayer = currentPlayer === 'O' ? 'X' : 'O' }
 })
 
 const X = 'X'
@@ -56,7 +54,14 @@ let ties = 0
 let turns = 1
 
 const xWins = () => {
-  if ($('#0').hasClass('X') && $('#1').hasClass('X') && $('#2').hasClass('X') || $('#3').hasClass('X') && $('#4').hasClass('X') && $('#5').hasClass('X') || $('#6').hasClass('X') && $('#7').hasClass('X') && $('#8').hasClass('X') || $('#0').hasClass('X') && $('#3').hasClass('X') && $('#6').hasClass('X') || $('#1').hasClass('X') && $('#4').hasClass('X') && $('#7').hasClass('X') || $('#2').hasClass('X') && $('#5').hasClass('X') && $('#8').hasClass('X') || $('#0').hasClass('X') && $('#4').hasClass('X') && $('#8').hasClass('X') || $('#2').hasClass('X') && $('#4').hasClass('X') && $('#6').hasClass('X')) {
+  if ($('#0').hasClass('X') && $('#1').hasClass('X') && $('#2').hasClass('X') ||
+  $('#3').hasClass('X') && $('#4').hasClass('X') && $('#5').hasClass('X') ||
+  $('#6').hasClass('X') && $('#7').hasClass('X') && $('#8').hasClass('X') ||
+  $('#0').hasClass('X') && $('#3').hasClass('X') && $('#6').hasClass('X') ||
+  $('#1').hasClass('X') && $('#4').hasClass('X') && $('#7').hasClass('X') ||
+  $('#2').hasClass('X') && $('#5').hasClass('X') && $('#8').hasClass('X') ||
+  $('#0').hasClass('X') && $('#4').hasClass('X') && $('#8').hasClass('X') ||
+  $('#2').hasClass('X') && $('#4').hasClass('X') && $('#6').hasClass('X')) {
     $('#game-message').text('X has WON!')
     $('.col').addClass('gameover')
     xScore++
@@ -65,7 +70,14 @@ const xWins = () => {
 }
 
 const oWins = () => {
-  if ($('#0').hasClass('O') && $('#1').hasClass('O') && $('#2').hasClass('O') || $('#3').hasClass('O') && $('#4').hasClass('O') && $('#5').hasClass('O') || $('#6').hasClass('O') && $('#7').hasClass('O') && $('#8').hasClass('O') || $('#0').hasClass('O') && $('#3').hasClass('O') && $('#6').hasClass('O') || $('#1').hasClass('O') && $('#4').hasClass('O') && $('#7').hasClass('O') || $('#2').hasClass('O') && $('#5').hasClass('O') && $('#8').hasClass('O') || $('#0').hasClass('O') && $('#4').hasClass('O') && $('#8').hasClass('O') || $('#2').hasClass('O') && $('#4').hasClass('O') && $('#6').hasClass('O')) {
+  if ($('#0').hasClass('O') && $('#1').hasClass('O') && $('#2').hasClass('O') ||
+  $('#3').hasClass('O') && $('#4').hasClass('O') && $('#5').hasClass('O') ||
+  $('#6').hasClass('O') && $('#7').hasClass('O') && $('#8').hasClass('O') ||
+  $('#0').hasClass('O') && $('#3').hasClass('O') && $('#6').hasClass('O') ||
+  $('#1').hasClass('O') && $('#4').hasClass('O') && $('#7').hasClass('O') ||
+  $('#2').hasClass('O') && $('#5').hasClass('O') && $('#8').hasClass('O') ||
+  $('#0').hasClass('O') && $('#4').hasClass('O') && $('#8').hasClass('O') ||
+  $('#2').hasClass('O') && $('#4').hasClass('O') && $('#6').hasClass('O')) {
     $('#game-message').text('O has WON!')
     $('.col').addClass('gameover')
     oScore++
@@ -81,13 +93,14 @@ const draw = () => {
   }
 }
 
+// This is the if/else for Box 0.
 const boxZero = () => {
   if (turns === 1) {
     $('#0').text(X)
     $('#0').addClass('X')
     turns = 2
   } else {
-    $('#0').text()
+    $('#0').text(O)
     $('#0').addClass('O')
     turns = 1
   }
@@ -101,6 +114,7 @@ const boxZero = () => {
   draw()
 }
 
+// This is the if/else for Box 1.
 const boxOne = () => {
   if (turns === 1) {
     $('#1').text(X)
@@ -120,6 +134,8 @@ const boxOne = () => {
   oWins()
   draw()
 }
+
+// This is the if/else for Box 2.
 const boxTwo = () => {
   if (turns === 1) {
     $('#2').text(X)
@@ -139,6 +155,8 @@ const boxTwo = () => {
   oWins()
   draw()
 }
+
+// This is the if/else for Box 3.
 const boxThree = () => {
   if (turns === 1) {
     $('#3').text(X)
@@ -160,6 +178,8 @@ const boxThree = () => {
   oWins()
   draw()
 }
+
+// This is the if/else for Box 4.
 const boxFour = () => {
   if (turns === 1) {
     $('#4').text(X)
@@ -179,6 +199,8 @@ const boxFour = () => {
   oWins()
   draw()
 }
+
+// This is the if/else for Box 5.
 const boxFive = () => {
   if (turns === 1) {
     $('#5').text(X)
@@ -198,6 +220,8 @@ const boxFive = () => {
   oWins()
   draw()
 }
+
+// This is the if/else for Box 6.
 const boxSix = () => {
   if (turns === 1) {
     $('#6').text(X)
@@ -217,6 +241,8 @@ const boxSix = () => {
   oWins()
   draw()
 }
+
+// This is the if/else for Box 7.
 const boxSeven = () => {
   if (turns === 1) {
     $('#7').text(X)
@@ -236,6 +262,8 @@ const boxSeven = () => {
   oWins()
   draw()
 }
+
+// This is the if/else for Box 8.
 const boxEight = () => {
   if (turns === 1) {
     $('#8').text(X)
@@ -256,6 +284,7 @@ const boxEight = () => {
   draw()
 }
 
+// This is the jQuery for clicking the reset button.
 const resetButton = () => {
   $('.col').text('+').removeClass('X O gameover')
   $('#game-message').text('')

@@ -8,6 +8,7 @@ const onSignUpSuccess = function (response) {
   $('#signUp').trigger('reset')
   $('signUp').show()
   $('signUp').hide()
+  $('#scorecard').hide()
 }
 
 // This runs if sign up failed.
@@ -25,6 +26,7 @@ const onSignInSuccess = function (response) {
   $('#signIn').hide()
   $('.btn-group').hide()
   $('#new-game').show()
+  $('#scorecard').hide()
 }
 
 // This runs if sign up failed.
@@ -58,6 +60,7 @@ const onSignOutSuccess = function (response) {
   $('#count-games').hide()
   $('#signUp').show()
   $('#signIn').show()
+  $('#scorecard').hide()
   store.user = null
 }
 const onBoxClickSuccess = (response) => {   store.game = response.game   console.log(store.game) 
