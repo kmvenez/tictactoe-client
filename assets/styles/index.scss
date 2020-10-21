@@ -38,20 +38,10 @@ img {
   margin: auto;
 }
 
-#signUp {
+#signUp , #signIn {
   display: flex;
   border: 1px dashed blue;
   padding: 35px 35px 35px 35px;
-  text-shadow: 2px 2px rgba(0, 0, 0, .25);
-  margin: 50px;
-  text-align: center;
-  margin-top: -5rem !important;
-}
-
-#signIn {
-  display: flex;
-  border: 1px dashed blue;
-  padding: 53px 80px 53px 80px;
   text-shadow: 2px 2px rgba(0, 0, 0, .25);
   margin: 50px;
   text-align: center;
@@ -105,7 +95,7 @@ img {
   border: 1px dashed blue;
   padding: 10px 10px 10px 10px;
   margin: 50px;
-  margin-top: -45rem !important;
+  margin-top: -30rem !important;
   margin-bottom: -45rem !important;
 }
 
@@ -115,7 +105,7 @@ img {
 }
 
 #new-game , #changePassword {
-  margin-top: -35rem !important;
+  margin-top: -30rem !important;
   margin: auto;
   display: flex;
   text-align: center;
@@ -152,7 +142,7 @@ img {
   border: 1px dashed blue;
   padding: 10px 10px 10px 10px;
   margin: 50px;
-  margin-top: -65rem !important;
+  margin-top: -50rem !important;
   margin-bottom: -15rem !important;
   margin-right: -15rem !important;
   margin-left: -15rem !important;

@@ -61,9 +61,10 @@ const onSignOutSuccess = function (response) {
   $('#signUp').show()
   $('#signIn').show()
   $('#scorecard').hide()
+  $('#response').hide()
   store.user = null
 }
-const onBoxClickSuccess = (response) => {   store.game = response.game   console.log(store.game) 
+const onBoxClickSuccess = (response) => { store.game = response.game   console.log(store.game) 
   $('#message').text('Player ' + store.currentPlayer + ' Turn') }
 
 const onBoxClickFailure = (response) => { 
