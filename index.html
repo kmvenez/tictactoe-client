@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Tic Tac Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+<body>
+  <p>It was known in Ancient Rome as "Terni Lapilli."  Medieval pagan rituals often thought the nine square grid
+    held magical powers.  Secret societies in the Middle Ages called it "Cabala of the Nine Chambers,"
+    believing the grid could hold secret messages.
+  <h1>Welcome... to Tic-Tac-Toe!</h1><br><br><br><br>
+
+<img src="https://i.imgur.com/LjQJLfL.png" alt="game controller icon"><br>
+
+
+<p id="response"></p>
+<div class="container">
+  <div class="row">
+    <div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
+
+          <form id="signUp">
+            <fieldset>
+              <legend>New Users</legend>
+              <label for="sign-up-email">Email:</label>
+              <input id="sign-up-email" type="email" name="email" placeholder="Enter your email here"><br>
+
+              <label for="sign-up-password">Password:</label>
+              <input id="sign-up-password" type="password" name="password" placeholder="Password"><br>
+
+              <label for="sign-up-password_confirmation">Password Confirmation:</label>
+              <input id="sign-up-password_confirmation" type="password" name="password_confirmation" placeholder="Confirm Password"><br>
+              <br>
+              <input type="submit" value="Sign up!">
+            </fieldset>
+          </form>
+        </div>
+
+          <div class="row">
+            <div class =".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
+                      <form id="signIn">
+                        <fieldset>
+                          <legend>Returning Users</legend>
+                          <label for="sign-in-email">Email:</label>
+                          <input id="sign-in-email" type="email" name="email" placeholder="Email"><br>
+
+                          <label for="sign-in-password">Password:</label>
+                          <input id="sign-in-password" type="password" name="password" placeholder="Password"><br>
+                          <br>
+                          <input type="submit" value="Sign In!">
+                        </fieldset>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+  <form id="changePassword">
+              <fieldset>
+              <legend>Don't like your password anymore? Change it here.</legend>
+                      <input type="password" name="passwordsold" placeholder="Old Password">
+                      <input type="password" name="passwordsnew" placeholder="New Password">
+                      <input type="submit" value="Change Password!">
+                      </fieldset>
+                          </form>
+
+          <form id='new-game'>
+                <legend>Ready to rock? Click here to start a new game.</legend><br>
+                <input type='submit' value='New Game'>
+          </form>
+
+
+      <div id='scorecard'>
+          <h1 id="game-message" class="game-message"></h1>
+          <!-- // This is the scoreboard: -->
+          <!-- <h3>O Wins: <span id="o-win">0</span><br></h3><br>
+          <h3>X Wins: <span id="x-win">0</span><br></h3><br>
+          <h3>Turn: <span id="turn">X</span><br></h3><br>
+          <h3>Tie: <span id="ties">0</span><br></h3><br> -->
+      </div>
+
+  <div id="game" class="container">
+<!-- // This is the actual physical game: -->
+      <div class="row">
+            <button data-cell-index='0' class="col-4 box">*</button>
+            <button data-cell-index='1' class="col-4 box">*</button>
+            <button data-cell-index='2' class="col-4 box">*</button>
+      </div>
+      <div class="row">
+            <button data-cell-index='3' class="col-4 box">*</button>
+            <button data-cell-index='4' class="col-4 box">*</button>
+            <button data-cell-index='5' class="col-4 box">*</button>
+      </div>
+      <div class="row">
+            <button data-cell-index='6' class="col-4 box">*</button>
+            <button data-cell-index='7' class="col-4 box">*</button>
+            <button data-cell-index='8' class="col-4 box">*</button>
+      </div>
+    </div>
+
+    <button id='start-over'>
+    <input class="btn reset-btn float-right" type='click' value='Start Over'>
+  </button><br>
+
+    	<form id='sign-out'>
+            <legend>Done for the day? Don't forget to log out.</legend>
+      			<button type='submit' value='Sign out'></button>
+      </form>
+
+<button id='count-games'>Count Games</button>
+
+<!-- Utilized this link: https://stackoverflow.com/questions/36003670/how-to-put-a-link-on-a-button-with-bootstrap -->
+<div class="btn-group" role="group">
+  <a href="http://www.realclear.com/living/2016/03/28/the_history_of_tictactoe_is_pretty_fascinating_stuff_13106.html" class="btn btn-info" role="button">The History of Tic-Tac-Toe</a>
+  <a href="https://github.com/kmvenez/tictactoe-client" class="btn btn-info" role="button">GitHub Repo</a>
+  <a href="https://www.youtube.com/watch?v=USEjXNCTvcc&ab_channel=TripleSGames" class="btn btn-info" role="button">Tutorial & Rules</a>
+
+</div>
+
+        </body>
+            </html>
