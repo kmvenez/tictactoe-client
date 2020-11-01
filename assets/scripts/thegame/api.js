@@ -24,20 +24,20 @@ const startGame = function () {
 }
 
 // This is the API call to update the game.
-const updateGame = function (boxIndex, currentPlayer) {
+const updateGame = function (boxIndex, currentPlayer, isOver) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    method: 'PATCH',
     data: {
       game: {
         cell: {
           index: boxIndex,
           value: currentPlayer
         },
-        over: false
+        over: isOver
       }
     }
   })
