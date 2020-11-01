@@ -74,47 +74,44 @@
           </form>
 
 
-          <div id='scorecard'>
+      <div id='scorecard'>
           <h1 id="game-message" class="game-message"></h1>
           <!-- // This is the scoreboard: -->
-          <h3>O Wins: <span id="o-win">0</span><br></h3><br>
+          <!-- <h3>O Wins: <span id="o-win">0</span><br></h3><br>
           <h3>X Wins: <span id="x-win">0</span><br></h3><br>
           <h3>Turn: <span id="turn">X</span><br></h3><br>
-          <h3>Tie: <span id="ties">0</span><br></h3><br>
-        </div>
+          <h3>Tie: <span id="ties">0</span><br></h3><br> -->
+      </div>
 
-  <form id="game">
-
+  <div id="game" class="container">
 <!-- // This is the actual physical game: -->
-          <div class="row">
-            <div data-box-index='0' id="0" class="col shadow-lg text-center">*</div>
-            <div data-box-index='1' id="1" class="col shadow-lg text-center">*</div>
-            <div data-box-index='2' id="2" class="col shadow-lg text-center">*</div>
-          </div>
-          <div class="row">
-            <div data-box-index='3' id="3" class="col shadow-lg text-center">*</div>
-            <div data-box-index='4' id="4" class="col shadow-lg text-center">*</div>
-            <div data-box-index='5' id="5" class="col shadow-lg text-center">*</div>
-          </div>
-          <div class="row">
-            <div data-box-index='6' id="6" class="col shadow-lg text-center">*</div>
-            <div data-box-index='7' id="7" class="col shadow-lg text-center">*</div>
-            <div data-box-index='8' id="8" class="col shadow-lg text-center">*</div>
-          </div>
-        </div>
-                  </form>
+      <div class="row">
+            <button data-cell-index='0' class="col-4 box">*</button>
+            <button data-cell-index='1' class="col-4 box">*</button>
+            <button data-cell-index='2' class="col-4 box">*</button>
+      </div>
+      <div class="row">
+            <button data-cell-index='3' class="col-4 box">*</button>
+            <button data-cell-index='4' class="col-4 box">*</button>
+            <button data-cell-index='5' class="col-4 box">*</button>
+      </div>
+      <div class="row">
+            <button data-cell-index='6' class="col-4 box">*</button>
+            <button data-cell-index='7' class="col-4 box">*</button>
+            <button data-cell-index='8' class="col-4 box">*</button>
+      </div>
+    </div>
 
+    <button id='start-over'>
+    <input class="btn reset-btn float-right" type='click' value='Start Over'>
+  </button><br>
 
-              <form id='start-over'>
-              <input class="btn reset-btn float-right" type='click' value='Start Over'>
-            </form><br>
+    	<form id='sign-out'>
+            <legend>Done for the day? Don't forget to log out.</legend>
+      			<button type='submit' value='Sign out'></button>
+      </form>
 
-        	<form id='sign-out'>
-                <legend>Done for the day? Don't forget to log out.</legend>
-        				<button type='submit' value='Sign out'></button>
-          </form>
-
-          <button id='count-games'>Count Games</button>
+<button id='count-games'>Count Games</button>
 
 <!-- Utilized this link: https://stackoverflow.com/questions/36003670/how-to-put-a-link-on-a-button-with-bootstrap -->
 <div class="btn-group" role="group">

@@ -6,14 +6,14 @@ const store = require('../store')
 const onSignUpSuccess = function (response) {
   $('#response').text('Welcome, ' + response.user.email)
   $('#signUp').trigger('reset')
-  $('signUp').show()
-  $('signUp').hide()
+  $('#signUp').show()
   $('#scorecard').hide()
 }
 
 // This runs if sign up failed.
 const onSignUpFailure = function (error) {
   $('#response').text(error, 'Uhoh! Try again.')
+  $('#signUp').trigger('reset')
 }
 
 // This runs if sign up was successful.
@@ -31,27 +31,34 @@ const onSignInSuccess = function (response) {
 
 // This runs if sign up failed.
 const onSignInFailure = function () {
-  $('#signUp').text('Uhoh! Try again.')
+  $('#signIn').text('Uhoh! Try again.')
+  $('#signIn').trigger('reset')
 }
 
 // This runs if change password was successful.
 const onChangePasswordSuccess = function () {
+  $('#changePassword').show()
   $('#changePassword').text('Success - password updated.')
+  $('#changePassword').trigger('reset')
 }
 
 // This runs if change password failed.
 const onChangePasswordFailure = function (error) {
-  $('#response').text(error, 'Oh no, try again.')
+  $('#changePassword').text(error, 'Oh no, try again.')
+  $('#changePassword').trigger('reset')
+  $('#changePassword').show()
 }
 
 // This runs if sign out failed.
 const onSignOutFailure = function (error) {
   $('#sign-out').text(error, 'Try again.')
+  $('#sign-out').trigger('reset')
 }
 
 // This runs if sign out was successful.
 const onSignOutSuccess = function (response) {
   $('#sign-out').text('See you later ' + store.user.email)
+  $('#sign-out').trigger('reset')
   $('#sign-out').hide()
   $('#changePassword').hide()
   $('#new-game').hide()
@@ -64,11 +71,6 @@ const onSignOutSuccess = function (response) {
   $('#response').hide()
   store.user = null
 }
-const onBoxClickSuccess = (response) => { store.game = response.game   console.log(store.game) 
-  $('#message').text('Player ' + store.currentPlayer + ' Turn') }
-
-const onBoxClickFailure = (response) => { 
-  $('#message').text('Something went wrong, try again') } 
 
 module.exports = {
   onSignUpSuccess,
@@ -78,6 +80,5 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutFailure,
-  onSignOutSuccess,
-  onBoxClickSuccess
+  onSignOutSuccess
 }

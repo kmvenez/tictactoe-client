@@ -73,9 +73,11 @@ img {
   border-bottom: 1px solid black;
   font-size: 15vh;
   text-shadow: 2px 2px rgba(0, 0, 0, .25);
+  height: 300px;
   &:hover {
     background-color: red;
   user-select: none;
+
   }
 }
 

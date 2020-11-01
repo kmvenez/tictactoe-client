@@ -7,17 +7,16 @@ const onNewGameFailure = function (error) {
 
 // This runs if a new game was successful.
 const onNewGameSuccess = function (response) {
-  store.games = response.games
-  console.log(store)
-  $('#response').text('Time to party.  Will you be...tic-tac-toast?')
+  store.game = response.game
   $('#new-game').hide()
   $('#changePassword').hide()
-  $('#game').show().css('background', '#c04df9')
-  $('.box').text('')
   $('#start-over').show()
   $('#sign-out').show()
   $('#count-games').show()
-  $('#scorecard').show()
+  $('#response').text('Time to party.  Will you be...tic-tac-toast?')
+  $('#game').show().css('background', '#c04df9')
+  $('.box').text('')
+  $('.gotClicked').prop('disabled', false)
 }
 
 // This runs if counting the games played failed.
@@ -33,9 +32,34 @@ const onCountGamesSuccess = function (response) {
   $('#count-games').text('You played ' + gamesAmount + ' games.')
 }
 
+// This runs if clicking a box works.
+const onBoxClickSuccess = (response) => {
+  store.game = response.game 
+  $('#response').text('Player ' + store.player + ' Turn')
+}
+
+// This runs if clicking a box fails.
+const onBoxClickFailure = (response) => {
+  $('#response').text('Something went wrong, try again')
+} 
+
+// This runs if updating game data works.
+const onUpdateSuccess = (response) => {
+  store.game = response.game 
+}
+
+// This runs if updating game data fails.
+const onUpdateFailure = (response) => {
+  $('#response').text('Something went wrong, try again')
+}
+
 module.exports = {
   onNewGameSuccess,
   onNewGameFailure,
   onCountGamesSuccess,
-  onCountGamesFailure
+  onCountGamesFailure,
+  onBoxClickSuccess,
+  onBoxClickFailure,
+  onUpdateSuccess,
+  onUpdateFailure
 }
